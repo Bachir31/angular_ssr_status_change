@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
+import { entityGuard } from './guards/entity.guard';
 
 export const routes: Routes = [
     {
         path: 'entity/:entity',
-        loadComponent: () => import('./components/entity/entity.component').then(m => m.EntityComponent)
+        loadComponent: () => import('./components/entity/entity.component').then(m => m.EntityComponent),
+        canActivate: [entityGuard]
     },
     {
         path: '404-page-not-found',

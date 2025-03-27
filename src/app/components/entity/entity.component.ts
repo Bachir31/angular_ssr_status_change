@@ -25,7 +25,7 @@ export class EntityComponent {
         this.currentEntity = routeParams['entity'];
       } else {
         this.currentEntity = '';
-        this.router.navigate(['/404-page-not-found']);
+        // this.router.navigate(['/404-page-not-found']);
       }
     })
   }
