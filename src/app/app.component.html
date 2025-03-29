@@ -1,8 +1,15 @@
 <div>
     Welcome to My Angular Project 🙂
+    <h5>Using a herf :</h5>
     <div>Link to inexistent enity : <a href="entity/123456789-entity">/entity/123456789-entity</a> - Expected status : 200 </div>
     <div>Link to inexistent enity : <a href="entity/987654321-entity">/entity/987654321-entity</a> - Expected status : 200 </div>
     <div>Link to inexistent enity : <a href="entity/000000000-entity">/entity/000000000-entity</a> - Expected status : 404 </div>
     <div>Link to inexistent enity : <a href="entity/000000000-entity">/entity/111111111-entity</a> - Expected status : 404 </div>
+    ----
+    <h5>Using routerLink :</h5>
+    <div>Link to inexistent enity : <a [routerLink]="['entity/123456789-entity']">/entity/123456789-entity</a> - Expected status : 200 </div>
+    <div>Link to inexistent enity : <a [routerLink]="['entity/987654321-entity']">/entity/987654321-entity</a> - Expected status : 200 </div>
+    <div>Link to inexistent enity : <a [routerLink]="['entity/000000000-entity']">/entity/000000000-entity</a> - Expected status : 404 </div>
+    <div>Link to inexistent enity : <a [routerLink]="['entity/000000000-entity']">/entity/111111111-entity</a> - Expected status : 404 </div>
     <router-outlet />
 </div>

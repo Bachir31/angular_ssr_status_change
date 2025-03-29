@@ -37,6 +37,22 @@ app.use(
   }),
 );
 
+const entityRegex = /\/entity\//
+const knownEntities = ['123456789-entity', '987654321-entity']
+app.use('/**', (req, res, next) => {
+  if (entityRegex.test(req.baseUrl)) {
+    let entity = req.baseUrl.substring(8);
+    console.log('entity :', entity)
+    if (knownEntities.includes(entity)) {
+      next();
+    } else {
+      res.redirect('/404-page-not-found');
+    }
+  } else {
+    next();
+  }
+});
+
 /**
  * Handle all other requests by rendering the Angular application.
  */
