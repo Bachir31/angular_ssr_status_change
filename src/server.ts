@@ -44,8 +44,10 @@ app.use('/**', (req, res, next) => {
     let entity = req.baseUrl.substring(8);
     console.log('entity :', entity)
     if (knownEntities.includes(entity)) {
+      console.log('known entity ...')
       next();
     } else {
+      console.log('Unknown entity redirection to 404 page ...')
       res.redirect('/404-page-not-found');
     }
   } else {
